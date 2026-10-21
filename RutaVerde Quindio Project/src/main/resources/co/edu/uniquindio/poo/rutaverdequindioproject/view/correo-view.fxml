@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="20" styleClass="panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.CorreoController">
+    <VBox spacing="8" prefWidth="420" minWidth="320">
+        <Label text="Bandeja de salida (simulada)" styleClass="titulo-seccion"/>
+        <ListView fx:id="lista" VBox.vgrow="ALWAYS"/>
+        <Label text="Cada reserva confirmada o rechazada genera un correo al cliente." styleClass="pista" wrapText="true"/>
+    </VBox>
+    <VBox spacing="8" HBox.hgrow="ALWAYS">
+        <Label text="Contenido" styleClass="titulo-seccion"/>
+        <TextArea fx:id="txtDetalle" editable="false" styleClass="voucher" VBox.vgrow="ALWAYS"
+                  promptText="Seleccione un correo para leerlo."/>
+    </VBox>
+</HBox>

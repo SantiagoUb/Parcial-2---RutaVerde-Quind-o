@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" styleClass="panel" maxWidth="620" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.AgenciaController">
+    <Label text="Datos de la agencia" styleClass="titulo-seccion"/>
+    <Label text="Aparecen en el encabezado de cada voucher." styleClass="pista"/>
+    <GridPane hgap="12" vgap="9">
+        <columnConstraints>
+            <ColumnConstraints minWidth="130"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+        <Label text="Nombre comercial" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="NIT" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtNit" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="RNT" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtRnt" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Dirección" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtDireccion" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Teléfono" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtTelefono" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <Label text="Correo" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCorreo" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Label text="Página web" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtWeb" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+    <HBox spacing="8">
+        <Button text="Guardar cambios" onAction="#onGuardar" styleClass="boton-primario"/>
+        <Button text="Deshacer" onAction="#onDeshacer"/>
+    </HBox>
+</VBox>

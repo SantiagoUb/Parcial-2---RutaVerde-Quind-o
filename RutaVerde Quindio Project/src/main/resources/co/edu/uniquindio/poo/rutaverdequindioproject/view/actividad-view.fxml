@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12" styleClass="panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.ActividadController">
+    <Label text="Nueva actividad" styleClass="titulo-seccion"/>
+    <GridPane hgap="12" vgap="8">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120"/>
+            <ColumnConstraints hgrow="ALWAYS" prefWidth="200"/>
+            <ColumnConstraints minWidth="130"/>
+            <ColumnConstraints hgrow="ALWAYS" prefWidth="200"/>
+        </columnConstraints>
+
+        <Label text="Código" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtCodigo" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Nombre" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtNombre" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+        <Label text="Municipio" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtMunicipio" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Duración (horas)" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtDuracion" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+
+        <Label text="Precio por persona" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="txtPrecio" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Cupo máximo por día" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        <TextField fx:id="txtCupo" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+
+        <Label text="Dificultad" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="cmbDificultad" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="Estado inicial" GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+        <ComboBox fx:id="cmbEstado" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="3"/>
+    </GridPane>
+    <HBox spacing="8">
+        <Button text="Crear actividad" onAction="#onCrear" styleClass="boton-primario"/>
+        <Button text="Limpiar" onAction="#onLimpiar"/>
+    </HBox>
+
+    <Separator/>
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Label text="Catálogo de actividades" styleClass="titulo-seccion"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="Cupos disponibles para el:"/>
+        <DatePicker fx:id="dpCupos"/>
+        <Button text="Suspender / Reactivar" onAction="#onCambiarEstado"/>
+    </HBox>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colCodigo" text="Código"/>
+            <TableColumn fx:id="colNombreAct" text="Nombre"/>
+            <TableColumn fx:id="colMunicipioAct" text="Municipio"/>
+            <TableColumn fx:id="colDuracionAct" text="Duración"/>
+            <TableColumn fx:id="colPrecioAct" text="Precio p/p"/>
+            <TableColumn fx:id="colCupoAct" text="Cupo máx."/>
+            <TableColumn fx:id="colDificultadAct" text="Dificultad"/>
+            <TableColumn fx:id="colEstadoAct" text="Estado"/>
+            <TableColumn fx:id="colDisponibles" text="Disponibles"/>
+        </columns>
+    </TableView>
+</VBox>

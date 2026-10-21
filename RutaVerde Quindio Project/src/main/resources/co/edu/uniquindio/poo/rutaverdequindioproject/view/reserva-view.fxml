@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="22" styleClass="panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.ReservaController">
+
+    <!-- Formulario -->
+    <VBox spacing="10" prefWidth="520" minWidth="470">
+        <Label text="Datos de la reserva" styleClass="titulo-seccion"/>
+        <GridPane hgap="12" vgap="9">
+            <columnConstraints>
+                <ColumnConstraints minWidth="120" prefWidth="125"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <Label text="Canal" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbCanal" maxWidth="Infinity" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Cliente" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbCliente" maxWidth="Infinity" promptText="Seleccione un cliente"
+                      GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Plan" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <ComboBox fx:id="cmbProducto" maxWidth="Infinity" promptText="Actividad o paquete"
+                      GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Fecha del viaje" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <DatePicker fx:id="dpFecha" maxWidth="Infinity" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Viajeros (1 a 15)" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Spinner fx:id="spnViajeros" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Guía" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <HBox spacing="10" alignment="CENTER_LEFT" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                <CheckBox fx:id="chkGuia" text="Incluir"/>
+                <ComboBox fx:id="cmbGuia" maxWidth="Infinity" HBox.hgrow="ALWAYS" promptText="Seleccione un guía"/>
+            </HBox>
+            <Label fx:id="lblGuiaInfo" styleClass="pista" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Label text="Servicios" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <HBox spacing="18" GridPane.rowIndex="7" GridPane.columnIndex="1">
+                <CheckBox fx:id="chkTransporte" text="Transporte desde el hotel"/>
+                <CheckBox fx:id="chkSeguro" text="Seguro de viaje"/>
+            </HBox>
+
+            <Label text="Observaciones" GridPane.rowIndex="8" GridPane.columnIndex="0" GridPane.valignment="TOP"/>
+            <TextArea fx:id="txtObservaciones" prefRowCount="3" wrapText="true"
+                      GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+            <Label text="Tarjeta de crédito" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+            <TextField fx:id="txtTarjeta" promptText="Número de tarjeta" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+        </GridPane>
+        <HBox spacing="8">
+            <Button text="Confirmar y pagar" onAction="#onConfirmar" styleClass="boton-primario"/>
+            <Button text="Nueva reserva" onAction="#onLimpiar"/>
+        </HBox>
+    </VBox>
+
+    <!-- Resumen y voucher -->
+    <VBox spacing="10" HBox.hgrow="ALWAYS">
+        <Label text="Resumen" styleClass="titulo-seccion"/>
+        <VBox spacing="6" styleClass="resumen">
+            <Label fx:id="lblTotal" styleClass="etiqueta-total"/>
+            <Label fx:id="lblDetalle" wrapText="true"/>
+        </VBox>
+        <Label text="Voucher emitido" styleClass="titulo-seccion"/>
+        <TextArea fx:id="txtVoucher" editable="false" styleClass="voucher" VBox.vgrow="ALWAYS"
+                  promptText="Aquí aparecerá el voucher cuando la reserva se confirme."/>
+    </VBox>
+</HBox>

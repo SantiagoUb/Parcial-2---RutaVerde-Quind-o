@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="20" styleClass="panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.ClienteController">
+    <VBox spacing="8" minWidth="300" prefWidth="320">
+        <Label text="Datos del cliente" styleClass="titulo-seccion"/>
+        <Label text="Documento o pasaporte"/>
+        <TextField fx:id="txtDocumento"/>
+        <Label text="Nombre completo"/>
+        <TextField fx:id="txtNombre"/>
+        <Label text="Teléfono"/>
+        <TextField fx:id="txtTelefono"/>
+        <Label text="Correo electrónico"/>
+        <TextField fx:id="txtCorreo"/>
+        <Label text="País de origen"/>
+        <TextField fx:id="txtPais"/>
+        <Label text="Idioma preferido"/>
+        <ComboBox fx:id="cmbIdioma" editable="true" maxWidth="Infinity"/>
+        <HBox spacing="8">
+            <Button text="Guardar" onAction="#onGuardar" styleClass="boton-primario"/>
+            <Button text="Limpiar" onAction="#onLimpiar"/>
+            <Button text="Eliminar" onAction="#onEliminar" styleClass="boton-peligro"/>
+        </HBox>
+        <Label text="Seleccione una fila de la tabla para editar o eliminar." styleClass="pista" wrapText="true"/>
+    </VBox>
+    <TableView fx:id="tabla" HBox.hgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colDocumento" text="Documento"/>
+            <TableColumn fx:id="colNombre" text="Nombre"/>
+            <TableColumn fx:id="colTelefono" text="Teléfono"/>
+            <TableColumn fx:id="colCorreo" text="Correo"/>
+            <TableColumn fx:id="colPais" text="País"/>
+            <TableColumn fx:id="colIdioma" text="Idioma"/>
+        </columns>
+    </TableView>
+</HBox>

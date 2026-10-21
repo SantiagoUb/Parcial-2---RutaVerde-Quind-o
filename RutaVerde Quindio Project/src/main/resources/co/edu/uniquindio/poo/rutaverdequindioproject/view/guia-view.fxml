@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="20" styleClass="panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.GuiaController">
+    <VBox spacing="8" minWidth="300" prefWidth="320">
+        <Label text="Datos del guía" styleClass="titulo-seccion"/>
+        <Label text="Identificación"/>
+        <TextField fx:id="txtIdentificacion"/>
+        <Label text="Nombre completo"/>
+        <TextField fx:id="txtNombre"/>
+        <Label text="Idiomas (separados por coma)"/>
+        <TextField fx:id="txtIdiomas" promptText="Español, Inglés"/>
+        <Label text="Teléfono"/>
+        <TextField fx:id="txtTelefono"/>
+        <Label text="Tarifa por día (COP)"/>
+        <TextField fx:id="txtTarifa" promptText="120000"/>
+        <HBox spacing="8">
+            <Button text="Guardar" onAction="#onGuardar" styleClass="boton-primario"/>
+            <Button text="Limpiar" onAction="#onLimpiar"/>
+            <Button text="Eliminar" onAction="#onEliminar" styleClass="boton-peligro"/>
+        </HBox>
+        <Label text="Un día de guía cubre hasta 8 horas; se cobran los días adicionales necesarios."
+               styleClass="pista" wrapText="true"/>
+    </VBox>
+    <TableView fx:id="tabla" HBox.hgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colIdentificacion" text="Identificación"/>
+            <TableColumn fx:id="colNombre" text="Nombre"/>
+            <TableColumn fx:id="colIdiomas" text="Idiomas"/>
+            <TableColumn fx:id="colTelefono" text="Teléfono"/>
+            <TableColumn fx:id="colTarifa" text="Tarifa por día"/>
+        </columns>
+    </TableView>
+</HBox>

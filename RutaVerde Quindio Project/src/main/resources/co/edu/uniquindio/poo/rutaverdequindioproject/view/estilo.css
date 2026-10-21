@@ -1,0 +1,58 @@
+.root {
+    -fx-font-size: 13px;
+    -fx-background-color: #fafdf6;
+}
+
+.encabezado {
+    -fx-background-color: linear-gradient(to right, #1b5e20, #43a047);
+    -fx-padding: 14 22 14 22;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 16;
+}
+.titulo-app { -fx-text-fill: white; -fx-font-size: 22px; -fx-font-weight: bold; }
+.subtitulo-app { -fx-text-fill: #c8e6c9; -fx-font-size: 13px; }
+
+.panel { -fx-padding: 16; }
+
+.titulo-seccion { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #2e7d32; }
+.pista { -fx-text-fill: #6d6d6d; -fx-font-style: italic; }
+.etiqueta-total { -fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #1b5e20; }
+
+.boton-primario {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-padding: 7 16 7 16;
+    -fx-cursor: hand;
+}
+.boton-primario:hover { -fx-background-color: #388e3c; }
+
+.boton-peligro {
+    -fx-background-color: #c62828;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-padding: 7 16 7 16;
+    -fx-cursor: hand;
+}
+.boton-peligro:hover { -fx-background-color: #d32f2f; }
+
+.resumen {
+    -fx-background-color: #f1f8e9;
+    -fx-background-radius: 8;
+    -fx-border-color: #c5e1a5;
+    -fx-border-radius: 8;
+    -fx-padding: 12;
+}
+
+.voucher { -fx-font-family: "Monospaced"; -fx-font-size: 12px; }
+
+.barra-estado {
+    -fx-background-color: #e8f5e9;
+    -fx-border-color: #c8e6c9 transparent transparent transparent;
+    -fx-padding: 6 16 6 16;
+}
+.barra-estado .label { -fx-text-fill: #33691e; }
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected { -fx-background-color: #c8e6c9; }
+.tab-pane > .tab-header-area > .headers-region > .tab .tab-label { -fx-font-weight: bold; }

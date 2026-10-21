@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.PrincipalController">
+    <top>
+        <HBox styleClass="encabezado">
+            <Label fx:id="lblNombreAgencia" styleClass="titulo-app"/>
+            <Label text="Gestión de reservas ecoturísticas del Quindío" styleClass="subtitulo-app"/>
+        </HBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Nueva reserva">
+                <content><fx:include source="reserva-view.fxml"/></content>
+            </Tab>
+            <Tab text="Clientes">
+                <content><fx:include source="cliente-view.fxml"/></content>
+            </Tab>
+            <Tab text="Guías">
+                <content><fx:include source="guia-view.fxml"/></content>
+            </Tab>
+            <Tab text="Actividades">
+                <content><fx:include source="actividad-view.fxml"/></content>
+            </Tab>
+            <Tab text="Paquetes">
+                <content><fx:include source="paquete-view.fxml"/></content>
+            </Tab>
+            <Tab text="Reservas y reportes">
+                <content><fx:include source="reporte-view.fxml"/></content>
+            </Tab>
+            <Tab text="Correos">
+                <content><fx:include source="correo-view.fxml"/></content>
+            </Tab>
+            <Tab text="Agencia">
+                <content><fx:include source="agencia-view.fxml"/></content>
+            </Tab>
+        </TabPane>
+    </center>
+    <bottom>
+        <HBox styleClass="barra-estado">
+            <Label fx:id="lblEstado"/>
+        </HBox>
+    </bottom>
+</BorderPane>

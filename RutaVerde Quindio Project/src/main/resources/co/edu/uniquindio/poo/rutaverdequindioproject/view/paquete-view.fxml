@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox spacing="20" styleClass="panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.PaqueteController">
+    <VBox spacing="8" prefWidth="480" HBox.hgrow="ALWAYS">
+        <Label text="Nuevo paquete" styleClass="titulo-seccion"/>
+        <HBox spacing="8" alignment="BOTTOM_LEFT">
+            <VBox spacing="4" prefWidth="90">
+                <Label text="Código"/>
+                <TextField fx:id="txtCodigo"/>
+            </VBox>
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="Nombre"/>
+                <TextField fx:id="txtNombre"/>
+            </VBox>
+            <VBox spacing="4" prefWidth="110">
+                <Label text="Descuento (0-20 %)"/>
+                <TextField fx:id="txtDescuento" text="0"/>
+            </VBox>
+            <Button text="Crear" onAction="#onCrear" styleClass="boton-primario"/>
+        </HBox>
+        <Label text="Paquetes existentes" styleClass="titulo-seccion"/>
+        <TableView fx:id="tablaPaquetes" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colCodigo" text="Código"/>
+                <TableColumn fx:id="colNombre" text="Nombre"/>
+                <TableColumn fx:id="colDescuento" text="Desc."/>
+                <TableColumn fx:id="colPrecio" text="Precio p/p"/>
+                <TableColumn fx:id="colDuracion" text="Duración"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+    <VBox spacing="8" prefWidth="520" HBox.hgrow="ALWAYS">
+        <Label text="Composición del paquete seleccionado" styleClass="titulo-seccion"/>
+        <TreeView fx:id="arbol" VBox.vgrow="ALWAYS"/>
+        <Label fx:id="lblResumen" wrapText="true" styleClass="pista"/>
+        <Label text="Agregar componente (actividad u otro paquete)"/>
+        <HBox spacing="8">
+            <ComboBox fx:id="cmbComponente" maxWidth="Infinity" HBox.hgrow="ALWAYS" promptText="Seleccione un producto"/>
+            <Button text="Agregar al paquete" onAction="#onAgregar" styleClass="boton-primario"/>
+        </HBox>
+    </VBox>
+</HBox>

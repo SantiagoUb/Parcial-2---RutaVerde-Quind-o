@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="12" styleClass="panel" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="co.edu.uniquindio.poo.rutaverdequindioproject.controller.ReporteController">
+    <Label text="Reportes" styleClass="titulo-seccion"/>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Ingresos con viaje desde"/>
+        <DatePicker fx:id="dpDesde"/>
+        <Label text="hasta"/>
+        <DatePicker fx:id="dpHasta"/>
+        <Button text="Calcular ingresos" onAction="#onIngresos" styleClass="boton-primario"/>
+        <Label fx:id="lblIngresos" styleClass="etiqueta-total"/>
+    </HBox>
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button text="Producto con más viajeros" onAction="#onProductoTop" styleClass="boton-primario"/>
+        <Label fx:id="lblTop"/>
+    </HBox>
+
+    <Separator/>
+
+    <Label text="Reservas confirmadas" styleClass="titulo-seccion"/>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colNumero" text="No."/>
+            <TableColumn fx:id="colCliente" text="Cliente"/>
+            <TableColumn fx:id="colProducto" text="Plan"/>
+            <TableColumn fx:id="colFecha" text="Fecha del viaje"/>
+            <TableColumn fx:id="colViajeros" text="Viajeros"/>
+            <TableColumn fx:id="colGuia" text="Guía"/>
+            <TableColumn fx:id="colExtras" text="Servicios"/>
+            <TableColumn fx:id="colTotal" text="Valor total"/>
+        </columns>
+    </TableView>
+</VBox>
